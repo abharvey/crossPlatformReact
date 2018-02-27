@@ -1,9 +1,16 @@
 {
-  "name": "crossPlatformReact",
+  "name": "crossplatformreact",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
+    "ios-bundle": "react-native bundle --dev false --entry-file index.ios.js --platform ios --bundle-output ios/main.jsbundle",
+    "ios-dev-bundle": "react-native bundle --entry-file index.ios.js --platform ios --bundle-output ios/main.jsbundle",
+    "android-bundle": "react-native bundle --dev false --entry-file index.android.js --platform android --bundle-output android/app/src/main/assets/index.android.bundle",
+    "android-dev-bundle": "react-native bundle --entry-file index.android.js --platform android --bundle-output android/app/src/main/assets/index.android.bundle",
+    "web-bundle": "webpack --config web/webpack/webpack.prod.config.js --progress --colors",
+    "web-dev": "webpack-dev-server --content-base web/public/ --config web/webpack/webpack.dev.config.js --port 3001 --inline --hot --colors",
+    "clear-cache": "gulp clear-cache",
     "test": "jest"
   },
   "dependencies": {
@@ -11,8 +18,16 @@
     "react-native": "0.53.3"
   },
   "devDependencies": {
-    "babel-jest": "22.4.1",
+    "autoprefixer": "^8.0.0",
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.2",
+    "babel-jest": "^22.4.1",
+    "babel-polyfill": "^6.26.0",
     "babel-preset-react-native": "4.0.0",
+    "eslint": "^4.18.1",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-react": "^7.7.0",
     "jest": "22.4.2",
     "react-test-renderer": "16.2.0"
   },

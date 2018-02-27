@@ -1,0 +1,9 @@
+src/public/*
+**/public/*
+node_modules/*
+**/node_modules/*
+*.config.js
+.ebextensions/*
+src/client/data/labelState.js
+src/client/globalAssets/locales/*
+src/server/server.js
